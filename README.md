@@ -5,7 +5,7 @@ A simple, clean Todo List application built with .NET MAUI.
 ## Prerequisites
 
 - [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or later
-- Visual Studio 2022 (recommended) or Visual Studio Code
+- Visual Studio Code or Visual Studio 2022 (recommended)  
 - Windows 10/11 for running the Windows version
 
 ## Running the Application
@@ -54,7 +54,3 @@ If you encounter any issues:
 2. Try cleaning and rebuilding the solution
 3. Make sure you're targeting the Windows platform
 4. Check that all required dependencies are installed
-
-## Contributing
-
-Feel free to submit issues and enhancement requests! 
