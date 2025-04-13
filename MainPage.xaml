@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleTodoApp.MainPage"
+             Title="Simple Todo App">
+
+    <Grid RowDefinitions="Auto,*" Padding="20">
+        <HorizontalStackLayout Spacing="10">
+            <Entry x:Name="TodoEntry" 
+                   Placeholder="Enter new task"
+                   ReturnType="Done"
+                   Completed="OnEntryCompleted"
+                   HorizontalOptions="FillAndExpand"/>
+            <Button Text="Add"
+                    Clicked="OnAddClicked"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"/>
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="TodoList" Grid.Row="1" Margin="0,20,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" ColumnDefinitions="Auto,*">
+                        <CheckBox IsChecked="{Binding IsCompleted}" 
+                                 CheckedChanged="OnItemCheckedChanged"/>
+                        <Label Grid.Column="1"
+                               Text="{Binding Title}"
+                               FontSize="16"
+                               VerticalOptions="Center">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label"
+                                           Binding="{Binding IsCompleted}"
+                                           Value="True">
+                                    <Setter Property="TextDecorations"
+                                            Value="Strikethrough"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
